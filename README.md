@@ -1,6 +1,8 @@
 # Google Domain DDNS 转发服务
 
-本项目使用 Golang 实现了对Google Domain DDNS接口的转发，用于解决在国内无法直接访问 Google Domain DDNS 接口的问题。通过这个项目，您可以在国内使用 Google Domain DDNS 服务，实现动态域名解析。
+本项目使用 Golang简单实现了对Google Domain DDNS接口的转发，用于解决在国内无法直接访问 Google Domain DDNS 接口的问题。通过这个项目，您可以在国内使用 Google Domain DDNS 服务，实现动态域名解析。
+
+本项目可以另外搭配[google-ddns-client](https://github.com/livefree965/google-ddns-client)项目使用，从而实现本地机器->中转服务器->Google服务的DDNS同步。
 
 ## 项目背景
 
@@ -16,9 +18,9 @@ Google Domain 是 Google 提供的域名注册和管理服务，其中包括了�
 
 ## 使用方法
 
-1. 使用前需要在domains.google.com中配置好动态DNS，**注意这里和固定DNS是分开配置的**，解析ip可以随便填，配置完成后会生成随机账号和密码，并在接下来的接口调用时填入。
+1. 使用前需要在[domains.google.com](https://domains.google.com/)中配置好动态DNS，解析ip可以随便填，配置完成后会生成随机账号和密码，并在接下来的接口调用时填入。
 
-2. 直接在命令行中执行，如有需要调整端口号即可：
+2. 项目已发布到dockerHub, 可直接在命令行中执行，如有需要调整端口号即可：
    
    ```bash
    docker run -d -p 8080:8080 livefree965/google_ddns_server
@@ -36,7 +38,6 @@ Google Domain 是 Google 提供的域名注册和管理服务，其中包括了�
 
 - 提交问题和建议，帮助改进项目。
 - 提交代码修复或新增功能，帮助增强项目。
-- 分享项目给其他人，帮助更多人解决 Google Domain DDNS 访问受限的问题。
 
 ## 许可
 
@@ -45,7 +46,3 @@ Google Domain 是 Google 提供的域名注册和管理服务，其中包括了�
 ## 帮助和支持
 
 如有任何问题或需要帮助，请在 GitHub 项目页面提交问题，我们会尽快回复并解答您的疑问。
-
-## 免责声明
-
-本项目仅用于解决 Google Domain DDNS 访问受限的问题，不用于违反 Google Domain 或其他相关服务的条款和条件。请合法使用本项目，一切后果由用户自负。
